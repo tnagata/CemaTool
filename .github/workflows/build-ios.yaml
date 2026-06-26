@@ -1,0 +1,52 @@
+name: Build iOS IPA
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build IPA
+    runs-on: macos-14
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      - name: Generate Xcode Project
+        run: |
+          cd 4ipa
+          xcodegen generate
+
+      - name: Build and Archive (Unsigned)
+        run: |
+          cd 4ipa
+          xcodebuild archive \
+            -project CemaApp.xcodeproj \
+            -scheme CemaApp \
+            -configuration Release \
+            -archivePath build/CemaApp.xcarchive \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY="" \
+            PROVISIONING_PROFILE_SPECIFIER=""
+
+      - name: Create IPA Package
+        run: |
+          cd 4ipa
+          mkdir -p build/Payload
+          cp -r build/CemaApp.xcarchive/Products/Applications/CemaApp.app build/Payload/
+          cd build
+          zip -r CemaApp.ipa Payload
+          
+      - name: Upload IPA Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: CemaApp-iOS-ipa
+          path: 4ipa/build/CemaApp.ipa
