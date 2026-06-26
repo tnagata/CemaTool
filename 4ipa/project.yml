@@ -1,6 +1,7 @@
 name: CemaApp
 options:
   bundleIdPrefix: com.qapro
+  minimumXcodeVersion: "15.0"
 targets:
   CemaApp:
     type: application
