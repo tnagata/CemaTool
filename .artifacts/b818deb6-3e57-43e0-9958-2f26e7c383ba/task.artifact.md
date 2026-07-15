@@ -1,0 +1,4 @@
+- [x] `MainActivity.kt` のタイトルに "v2" を追加する
+- [x] `ic_launcher_foreground.xml` を鷹の顔（鋭い目）のベクターデザインに更新する
+- [x] `ic_launcher_background.xml` をダークグレー（#212121）に変更する
+- [x] プロジェクトをビルドして確認する

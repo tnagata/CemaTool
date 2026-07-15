@@ -5,9 +5,9 @@ AndroidアプリのCEMAtool.apk (Corporate Ethical Maturity Assessment、企業�
 https://drive.google.com/drive/folders/1mjsyV0QEW5hE4ITKchgBnd4NXlBBD6DX　（１７期のCEMMフォルダ）内に
 このapkとこれがセキュリティ上問題ないことを示すGoogleのVirusTotalでの確認結果のスクリーンショットを置きました。
 
-以下の手順でご自分のandroid端末にいんすーるしてください。
+以下の手順でご自分のandroid端末にインストールしてください。
 
-Google Playプロテクトのブロックを一時解除する （こっちでやった）
+Google Playプロテクトのブロックを一時解除する
 
 開発中の自作アプリは、Googleのセキュリティスキャンに登録されていないため、Playストアの裏機能（Playプロテクト）が勝手に「危険なアプリ」と誤判定してインストールを途中で強制終了させることがあります。（実際エラーになってインストールできなかったので、この方法でインストールした）
 
