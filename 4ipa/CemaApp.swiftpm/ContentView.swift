@@ -63,7 +63,7 @@ struct DisclaimerView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            Text("企業倫理成熟度評価 (CEMA)\n- 試用版プロトタイプ -")
+            Text("企業倫理成熟度評価 (CEMA)v.0.2\n- 試用版プロトタイプ -")
                 .font(.system(size: 22, weight: .bold))
                 .multilineTextAlignment(.center)
                 .foregroundColor(Color(red: 0.1, green: 0.1, blue: 0.1))
